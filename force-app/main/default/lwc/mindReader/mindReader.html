@@ -1,0 +1,14 @@
+<template>
+    <template if:true={showTable}>
+        <lightning-datatable key-field="id" columns={cols} data={data}>
+        </lightning-datatable>
+        <lightning-button label="Reveal" onclick={reveal}></lightning-button>
+    </template>
+
+    <template if:false={showTable}>
+        <lightning-icon icon-name={iconName} alternative-text="Approved" title="Approved"></lightning-icon>
+        <div>
+            <lightning-button label="Reset" onclick={reset}></lightning-button>
+        </div>
+    </template>    
+</template>
