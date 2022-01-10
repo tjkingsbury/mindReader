@@ -1,7 +1,27 @@
 <template>
     <template if:true={showTable}>
-        <lightning-datatable key-field="id" columns={cols} data={data}>
-        </lightning-datatable>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-5">
+                <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data1}>
+                </lightning-datatable>
+            </div>
+            <div class="slds-col slds-size_1-of-5">
+                <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data2}>
+                </lightning-datatable>
+            </div>
+            <div class="slds-col slds-size_1-of-5">
+                <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data3}>
+                </lightning-datatable>
+            </div>
+            <div class="slds-col slds-size_1-of-5">
+                <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data4}>
+                </lightning-datatable>
+            </div>
+            <div class="slds-col slds-size_1-of-5">
+                <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data5}>
+                </lightning-datatable>
+            </div>
+        </div>                
         <lightning-button label="Reveal" onclick={reveal}></lightning-button>
     </template>
 

@@ -1,11 +1,10 @@
-import UserPreferencesHideCSNGetChatterMobileTask from '@salesforce/schema/User.UserPreferencesHideCSNGetChatterMobileTask';
-import { LightningElement, track, api } from 'lwc';
+import { LightningElement, track } from 'lwc';
 
 export default class App extends LightningElement {
     @track cols = [
         {
             fieldName: 'name',
-            label: 'Name'
+            label: 'Name',
         },
         {
             fieldName: '',
@@ -13,7 +12,13 @@ export default class App extends LightningElement {
             cellAttributes: { iconName: { fieldName: 'dynamicIcon' } }
         },
     ];
-    @track data = []
+    @track data = [];
+
+    @track data1 = [];
+    @track data2 = [];
+    @track data3 = [];
+    @track data4 = [];
+    @track data5 = [];
 
     @track specialIcon = '';
 
@@ -23,8 +28,17 @@ export default class App extends LightningElement {
 
     connectedCallback(){
 
+        this.populateData();
+    }
+
+    populateData(){
+        this.data = [];
+        this.data1 = [];
+        this.data2 = [];
+        this.data3 = [];
+        this.data4 = [];
+        this.data5 = [];
         let rand = Math.floor(Math.random()*100);
-        console.log(rand);
         this.specialIcon = rand;
         for(let i = 1; i <101; i++){
 
@@ -35,26 +49,32 @@ export default class App extends LightningElement {
             }
 
             this.data.push({id:i, name: i, dynamicIcon:'custom:custom' + randTemp});
+
+            if(i >= 1 && i <=20){
+                this.data1.push({id:i, name: i, dynamicIcon:'custom:custom' + randTemp});
+            }
+            else if(i > 20 && i <=40){
+                this.data2.push({id:i, name: i, dynamicIcon:'custom:custom' + randTemp});
+            }
+            else if(i >40 && i <=60){
+                this.data3.push({id:i, name: i, dynamicIcon:'custom:custom' + randTemp});
+            }
+            else if(i >60 && i <=80){
+                this.data4.push({id:i, name: i, dynamicIcon:'custom:custom' + randTemp});
+            }
+            else if(i >80 && i <=100){
+                this.data5.push({id:i, name: i, dynamicIcon:'custom:custom' + randTemp});
+            }
         }
     }
 
     reset(){
-        console.log('hello reset');
-        let temp = [];
-        this.data.forEach(row =>{
-            row.dynamicIcon = 'standard:account';
-            temp.push(row);
-            console.log(JSON.stringify(row));
-        })
-
-        console.log(JSON.stringify(this.data));
-        this.data = temp;
+        this.populateData();
+        this.showTable = true;
     }
 
     reveal(){
-        //hide table
         this.showTable = false;
         this.iconName = 'custom:custom' + this.specialIcon;
-        //show icon
     }
 }
