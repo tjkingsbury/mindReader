@@ -1,37 +1,41 @@
 <template>
     <lightning-card  title="Mind Reader">
         <template if:true={showTable}>
-            <p>Choose any two-digit number, add together both the digits and then subtract the total from your original number.</p>
-            <p>When you have the final number look it up on the chart and find the relevant symbol.</p>
-            <div class="slds-grid slds-gutters">
-                <div class="slds-col slds-size_1-of-5">
-                    <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data1}>
-                    </lightning-datatable>
-                </div>
-                <div class="slds-col slds-size_1-of-5">
-                    <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data2}>
-                    </lightning-datatable>
-                </div>
-                <div class="slds-col slds-size_1-of-5">
-                    <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data3}>
-                    </lightning-datatable>
-                </div>
-                <div class="slds-col slds-size_1-of-5">
-                    <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data4}>
-                    </lightning-datatable>
-                </div>
-                <div class="slds-col slds-size_1-of-5">
-                    <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data5}>
-                    </lightning-datatable>
-                </div>
-            </div>                
-            <lightning-button label="Reveal" onclick={reveal}></lightning-button>
+            <div class="slds-p-around_xx-small">
+                <p>Choose any two-digit number, add together both the digits and then subtract the total from your original number.</p>
+                <p>When you have the final number look it up on the chart and find the relevant symbol.</p>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-5">
+                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data1}>
+                        </lightning-datatable>
+                    </div>
+                    <div class="slds-col slds-size_1-of-5">
+                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data2}>
+                        </lightning-datatable>
+                    </div>
+                    <div class="slds-col slds-size_1-of-5">
+                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data3}>
+                        </lightning-datatable>
+                    </div>
+                    <div class="slds-col slds-size_1-of-5">
+                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data4}>
+                        </lightning-datatable>
+                    </div>
+                    <div class="slds-col slds-size_1-of-5">
+                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data5}>
+                        </lightning-datatable>
+                    </div>
+                </div>                
+                <lightning-button label="Reveal" onclick={reveal}></lightning-button>
+            </div>
         </template>
     
         <template if:false={showTable}>
-            <lightning-icon icon-name={iconName} alternative-text="Approved" title="Approved"></lightning-icon>
-            <div>
-                <lightning-button label="Reset" onclick={reset}></lightning-button>
+            <div class="slds-p-around_xx-small">
+                <lightning-icon icon-name={iconName} alternative-text="Approved" title="Approved"></lightning-icon>
+                <div>
+                    <lightning-button label="Reset" onclick={reset}></lightning-button>
+                </div>
             </div>
         </template>
     </lightning-card>
