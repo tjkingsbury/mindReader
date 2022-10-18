@@ -32,7 +32,9 @@
     
         <template if:false={showTable}>
             <div class="slds-p-around_xx-small">
-                <lightning-icon icon-name={iconName} alternative-text="Approved" title="Approved"></lightning-icon>
+                <div class="slds-p-around_x-small">
+                    <lightning-icon icon-name={iconName} alternative-text="Approved" title="Approved"></lightning-icon>
+                </div>
                 <div>
                     <lightning-button label="Reset" onclick={reset}></lightning-button>
                 </div>
