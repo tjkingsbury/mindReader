@@ -13,7 +13,7 @@ export default class App extends LightningElement {
         },
     ];
     @track data = [];
-
+    //holds data for each column
     @track data1 = [];
     @track data2 = [];
     @track data3 = [];
