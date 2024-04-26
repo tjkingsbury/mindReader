@@ -4,27 +4,55 @@
             <div class="slds-p-around_xx-small">
                 <p>Choose any two-digit number, add together both the digits and then subtract the total from your original number.</p>
                 <p>When you have the final number look it up on the chart and find the relevant symbol.</p>
-                <div class="slds-grid slds-gutters">
-                    <div class="slds-col slds-size_1-of-5">
-                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data1}>
-                        </lightning-datatable>
-                    </div>
-                    <div class="slds-col slds-size_1-of-5">
-                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data2}>
-                        </lightning-datatable>
-                    </div>
-                    <div class="slds-col slds-size_1-of-5">
-                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data3}>
-                        </lightning-datatable>
-                    </div>
-                    <div class="slds-col slds-size_1-of-5">
-                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data4}>
-                        </lightning-datatable>
-                    </div>
-                    <div class="slds-col slds-size_1-of-5">
-                        <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data5}>
-                        </lightning-datatable>
-                    </div>
+                <p>Click Reveal at the bottom and the Mind Reader will show you which symbol you picked</p>
+                <div class="slds-grid slds-gutters slds-wrap">
+
+                    <template if:false={isMobile}>
+
+                        <div class="slds-col slds-size_1-of-5">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data1}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-col slds-size_1-of-5">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data2}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-col slds-size_1-of-5">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data3}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-col slds-size_1-of-5">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data4}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-col slds-size_1-of-5">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data5}>
+                            </lightning-datatable>
+                        </div>
+                    </template>
+
+                    <template if:true={isMobile}>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data1}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data2}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data3}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data4}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-datatable hide-checkbox-column key-field="id" columns={cols} data={data5}>
+                            </lightning-datatable>
+                        </div>
+                    </template>
                 </div>                
                 <lightning-button label="Reveal" onclick={reveal}></lightning-button>
             </div>

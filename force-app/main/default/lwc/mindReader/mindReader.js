@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-
+import FORM_FACTOR from '@salesforce/client/formFactor';
 export default class App extends LightningElement {
     @track cols = [
         {
@@ -26,9 +26,14 @@ export default class App extends LightningElement {
 
     @track iconName = '';
 
+    isMobile = false;
+    
     connectedCallback(){
-
+        if(FORM_FACTOR.toLowerCase() === 'small'){
+            this.isMobile = true;
+        }
         this.populateData();
+        console.log('is mobile: ' + this.isMobile);
     }
 
     populateData(){
