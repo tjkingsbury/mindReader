@@ -33,7 +33,6 @@ export default class App extends LightningElement {
             this.isMobile = true;
         }
         this.populateData();
-        console.log('is mobile: ' + this.isMobile);
     }
 
     populateData(){
