@@ -1,5 +1,5 @@
 Try it out:
-Navigate to this website (doesn't work on mobile unfortunately):
+Navigate to this website:
 https://taylorkingsbury2-dev-ed.develop.my.site.com/
 
 
